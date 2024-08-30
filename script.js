@@ -57,3 +57,32 @@ leftBtn.addEventListener('click', function() {
 
 // Mettre à jour le carrousel lors du chargement de la page
 updateCarousel();
+
+/*Explication des parties clés :
+
+Sélection des éléments :
+carouselItems : Ceci sélectionne tous les éléments du carrousel et les stocke dans 
+une liste.
+
+leftBtn et rightBtn : Ces sélections permettent d'accéder aux boutons pour naviguer 
+dans le carrousel.
+
+Gestion de l'index actuel :
+currentIndex maintient l'index de l'élément actuellement affiché dans le carrousel.
+
+Fonction updateCarousel :
+C'est ici que la logique pour mettre à jour les éléments du carrousel est gérée. 
+Elle retire les classes d'état des anciens éléments et ajoute les classes appropriées 
+basées sur l'index actuel.
+
+Gestion des événements de bouton :
+Lorsqu'un bouton est cliqué, nous vérifions d'abord si une animation est déjà en cours 
+pour éviter que l'utilisateur ne clique plusieurs fois rapidement.
+
+setTimeout est utilisé pour réinitialiser l'indicateur d'animation (isAnimating) après
+un délai de 300 millisecondes, ce qui correspond normalement à la durée de la transition 
+CSS.
+
+Appel initial de updateCarousel :
+Cela met à jour l'état du carrousel lors du chargement, garantissant que le bon élément est affiché immédiatement.
+*/
