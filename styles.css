@@ -1,113 +1,145 @@
+/* Réinitialiser les marges et les paddings, définir les styles de base */
 *, *::after, *::before {
-    margin: 0;
-    padding: 0;
-    box-sizing: inherit;
-    font-family: 'Montserrat', sans-serif;
+    margin: 0; /* Retirer les marges par défaut */
+    padding: 0; /* Retirer les paddings par défaut */
+    box-sizing: inherit; /* Utiliser la boîte de calcul héritée pour les éléments */
+    font-family: 'Montserrat', sans-serif; /* Définir la police de caractères par défaut */
 }
+
+/* Définir la taille de la police de la racine (html) */
 html {
-    font-size: 62.5%;
+    font-size: 62.5%; /* Correspond à 10px, facilitant les rem (1rem = 10px) */
 }
+
+/* Style de base pour le corps de la page */
 body {
-    box-sizing: border-box;
-    font-size: 1.6rem;
-    background-color: rgb(24, 27, 30);
-    color: #fff;
-    display: grid;
-    place-items: center;
-    min-height: 100vh;
+    box-sizing: border-box; /* Inclure le padding et la bordure dans la taille totale de l'élément */
+    font-size: 1.6rem; /* Taille de police de base pour le corps (16px) */
+    background-color: rgb(24, 27, 30); /* Couleur de fond sombre */
+    color: #fff; /* Couleur du texte blanche */
+    display: grid; /* Utilisation de Flexbox pour la mise en page */
+    place-items: center; /* Centrer les éléments dans la grille */
+    min-height: 100vh; /* S'assurer que le corps remplit toute la hauteur de la fenêtre */
 }
 
+/* Style pour le carrousel */
 .carousel {
-    position: relative;
+    position: relative; /* Position relative pour gérer le positionnement des éléments enfants */
 }
+
+/* Style pour chaque élément du carrousel */
 .carousel__item {
-    position: relative;
-    height: 35rem;
-    width: 25rem;
-    border-radius: 3px;
-    overflow: hidden;
-    box-shadow: 0 1rem 4rem rgba(0,0,0,.5);
-    position: absolute;
-    transform: translate(-50%,-50%) scale(.1);
-    z-index: 0;
-    transition: all .2s linear;
+    position: relative; /* Position relative pour les éléments au sein du carrousel */
+    height: 35rem; /* Hauteur de chaque élément */
+    width: 25rem; /* Largeur de chaque élément */
+    border-radius: 3px; /* Coins arrondis pour les images */
+    overflow: hidden; /* Masquer le débordement des images */
+    box-shadow: 0 1rem 4rem rgba(0,0,0,.5); /* Ombre portée sur les éléments */
+    position: absolute; /* Position absolue pour superposer les éléments */
+    transform: translate(-50%,-50%) scale(.1); /* Échelle initiale pour tous les éléments */
+    z-index: 0; /* Index de profondeur de l'élément */
+    transition: all .2s linear; /* Transition fluide pour les transformations */
 }
+
+/* Styles pour les images à l'intérieur des éléments du carrousel */
 .carousel__item img {
-    width: 100%;
-    min-height: 100%;
-    object-fit: cover;
+    width: 100%; /* Étendre l'image à 100% de la largeur du conteneur */
+    min-height: 100%; /* S'assurer que l'image a au moins la hauteur du conteneur */
+    object-fit: cover; /* Couvrir le conteneur sans déformation d'image */
 }
 
+/* Style spécifique pour l'élément principal du carrousel */
 .carousel__item--main {
-    transform: translate(-50%,-50%) scale(1);
-    z-index: 2;
-    cursor: pointer;
+    transform: translate(-50%,-50%) scale(1); /* Réinitialiser l'échelle pour l'élément principal */
+    z-index: 2; /* Index de profondeur supérieur pour l'élément principal */
+    cursor: pointer; /* Changer le curseur au survol */
 }
 
+/* Styles pour les éléments de gauche et de droite */
 .carousel__item--left {
-    transform: translate(-110%,-50%) scale(.9);
-    z-index: 1;
+    transform: translate(-110%,-50%) scale(.9); /* Positionné à gauche */
+    z-index: 1; /* Index de profondeur inférieur */
 }
+
 .carousel__item--right {
-    transform: translate(10%,-50%) scale(.9);
-    z-index: 1;
+    transform: translate(10%,-50%) scale(.9); /* Positionné à droite */
+    z-index: 1; /* Index de profondeur inférieur */
 }
+
+/* Applique un filtre de désaturation aux éléments gauche et droit */
 .carousel__item--left img, .carousel__item--right img {
-    filter: grayscale(80%);
+    filter: grayscale(80%); /* Image en niveaux de gris */
 }
 
+/* Effet de survol pour l'élément de droite */
 .carousel__item--right:hover {
-    transform: translate(10%,-50%) scale(1.2);
-    z-index: 3;
-    cursor: pointer;
+    transform: translate(10%,-50%) scale(1.2); /* Agrandir l'élément au survol */
+    z-index: 3; /* Index de profondeur supérieur lors du survol */
+    cursor: pointer; /* Changer le curseur au survol */
 }
+
+/* Effet de survol pour l'élément de gauche */
 .carousel__item--left:hover {
-    transform: translate(-110%,-50%) scale(1.2);
-    z-index: 3;
-    cursor: pointer;
+    transform: translate(-110%,-50%) scale(1.2); /* Agrandir l'élément au survol */
+    z-index: 3; /* Index de profondeur supérieur lors du survol */
+    cursor: pointer; /* Changer le curseur au survol */
 }
+
+/* Effet de survol pour l'élément principal */
 .carousel__item--main:hover {
-    transform: translate(-50%,-50%) scale(1.2);
+    transform: translate(-50%,-50%) scale(1.2); /* Agrandir l'élément principal au survol */
 }
+
+/* Afficher le texte lorsque l'élément est survolé */
 .carousel__item:hover > .carousel__text {
-    opacity: 1;
+    opacity: 1; /* Rendre le texte visible */
 }
+
+/* Réinitialiser le filtre à la couleur d'origine lors du survol */
 .carousel__item:hover img {
-    filter: grayscale(0%);
+    filter: grayscale(0%); /* Retirer le filtre de désaturation */
 }
 
+/* Styles pour le texte superposé au bas des éléments */
 .carousel__text {
-    position: absolute;
-    bottom: 0;
-    z-index: 4;
-    opacity: 0;
-    transition: opacity .2s;
-    width: 100%;
-    text-align: center;
-    background-color: rgba(0,0,0,.5);
-    padding: 2rem 1rem;
-    color: #fff;
+    position: absolute; /* Position à l'intérieur de l'élément parent */
+    bottom: 0; /* Aligner en bas de l'élément */
+    z-index: 4; /* Index de profondeur supérieur pour le texte */
+    opacity: 0; /* Commencer avec le texte invisible */
+    transition: opacity .2s; /* Transition fluide de l'opacité */
+    width: 100%; /* Largeur totale de l'élément */
+    text-align: center; /* Centrer le texte */
+    background-color: rgba(0,0,0,.5); /* Fond semi-transparent pour le texte */
+    padding: 2rem 1rem; /* Espacement autour du texte */
+    color: #fff; /* Couleur du texte blanche */
 }
 
+/* Style pour les boutons de navigation du carrousel */
 .carousel__btns {
-    position: absolute;
-    transform: translate(-50%, 22rem);
-    display: flex;
-    gap: 2rem;
+    position: absolute; /* Positionnement absolu pour les boutons */
+    transform: translate(-50%, 22rem); /* Positionner les boutons sous le carrousel */
+    display: flex; /* Utiliser flexbox pour l'alignement */
+    gap: 2rem; /* Espacement entre les boutons */
 }
+
+/* Style pour chaque bouton de navigation */
 .carousel__btn {
-    background-color: transparent;
-    height: 5rem;
-    width: 5rem;
-    border-radius: 50%;
-    border: 1px solid currentColor;
-    color: #fff;
-    cursor: pointer;
+    background-color: transparent; /* Fond transparent pour le bouton */
+    height: 5rem; /* Hauteur du bouton */
+    width: 5rem; /* Largeur du bouton */
+    border-radius: 50%; /* Boutons ronds */
+    border: 1px solid currentColor; /* Bordure avec la couleur actuelle */
+    color: #fff; /* Couleur du texte blanche */
+    cursor: pointer; /* Changer le curseur au survol */
 }
+
+/* Style pour les SVG à l'intérieur des boutons */
 .carousel__btn svg {
-    height: 1.8rem;
-    width: 1.8rem;
+    height: 1.8rem; /* Hauteur de l'icône SVG */
+    width: 1.8rem; /* Largeur de l'icône SVG */
 }
+
+/* Effet de survol pour les boutons */
 .carousel__btn:hover {
-    color: #aaa;
+    color: #aaa; /* Changer la couleur au survol */
 }
