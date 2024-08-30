@@ -1,3 +1,6 @@
+/*Ce code représente un carrousel d'images interactif avec des effets de survol et 
+des éléments de navigation.*/
+
 /* Réinitialiser les marges et les paddings, définir les styles de base */
 *, *::after, *::before {
     margin: 0; /* Retirer les marges par défaut */
