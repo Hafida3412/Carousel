@@ -10,26 +10,48 @@
     <div class="carousel">
         <!-- Carrousel Content -->
         <div class="carousel__item carousel__item--left">
-            <img src="img/chiots.jpg" alt="dog">
+            <img src="img/chiots.jpg" alt="Un chiot">
             <div class="carousel__text">
-                <h3>Cute Puppy</h3>
-                <p>Isn't it cute?!</p>
+                <h3>Chiot Mignon</h3>
+                <p>Il est pas mignon ?!</p>
             </div>
         </div>
         <div class="carousel__item carousel__item--main">
-            <img src="img/chien_qui_dort.jpg" alt="dog">
+            <img src="img/chien_qui_dort.jpg" alt="Un chien qui dort">
             <div class="carousel__text">
-                <h3>Cute Puppy</h3>
-                <p>Isn't it cute?!</p>
+                <h3>Chiot Mignon</h3>
+                <p>Il est pas mignon ?!</p>
             </div>
         </div>
         <div class="carousel__item carousel__item--right">
-            <img src="img/tete_chien.jpg" alt="dog">
+            <img src="img/tete_chien.jpg" alt="Une tête de chien">
             <div class="carousel__text">
-                <h3>Cute Puppy</h3>
-                <p>Isn't it cute?!</p>
+                <h3>Chiot Mignon</h3>
+                <p>Il est pas mignon ?!</p>
             </div>
         </div>
+        <div class="carousel__item carousel__item--right">
+            <img src="img/chien_lunettes.jpg" alt="Un chien avec des lunettes">
+            <div class="carousel__text">
+                <h3>Chiot Mignon</h3>
+                <p>Il est pas mignon ?!</p>
+            </div>
+        </div>
+        <div class="carousel__item carousel__item--right">
+            <img src="img/chien_cotillon.jpg" alt="Un chien avec un cotillon">
+            <div class="carousel__text">
+                <h3>Chiot Mignon</h3>
+                <p>Il est pas mignon ?!</p>
+            </div>
+        </div>
+        <div class="carousel__item carousel__item--right">
+            <img src="img/chien_balle.jpg" alt="Un chien avec une balle">
+            <div class="carousel__text">
+                <h3>Chiot Mignon</h3>
+                <p>Il est pas mignon ?!</p>
+            </div>
+        </div>
+        
         <div class="carousel__btns">
             <button class="carousel__btn" id="leftBtn">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
@@ -43,6 +65,6 @@
             </button>
         </div>
     </div>
-    <script src="script.js"></script> <!-- Correction: l'URL était incorrecte -->
+    <script src="script.js"></script>
 </body>
 </html>
